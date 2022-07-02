@@ -1,7 +1,7 @@
 {
   "name": "app_landing",
   "version": "1.0.0",
-  "description": "",
+  "description": "Crate project \"app_landing\". Use HTML, SCSS, GULP, JS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +17,13 @@
   },
   "homepage": "https://github.com/AlexAltR/app_landing#readme",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-stylelint": "^13.0.0",
+    "sass": "^1.53.0",
+    "stylelint": "^14.9.1"
+  },
+  "dependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp-sass": "^5.1.0"
   }
 }

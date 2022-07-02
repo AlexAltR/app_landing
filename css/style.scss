@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+// === MIXIN ===
+@mixin roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin quicksand {
+    font-family: 'Quicksand', sans-serif;
+}
+
+// === / MIXIN ===
+
+// === VARIABLES ===
+$base: 4px;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+$fs-sm: 12px;
+$fs-medium: 15px;
+
+$padding-vertical-xs: $base * 5;
+$padding-vertical-sm: $base * 15;
+$padding-vertical: $base * 30;
+
+$color-divider: #d8e3fe;
+
+$transition: .2s;
+
+$color-primary: #697ca6;
+$color-secondary: #6188ff;
+// === / VARIABLES ===
+
+
+
+// === COMMON ===
+body {
+    @include roboto;
+}
+
+
+.section-outer {
+    border-bottom: 1px solid $color-divider;
+}
+
+.section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: $padding-vertical;
+    padding-bottom: $padding-vertical;
+
+    &--wide {
+        max-width: 1200px;
+    }
+}
+
+.btn {
+    @include quicksand;
+
+    font-weight: $fw-bold;
+    padding: $base*3 $base*4;
+    margin: 0;
+    font-size: $fs-sm;
+    background-color: none;
+    border: 0;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: $transition;
+
+    &--primary {
+        background-color: #d2e1ff;
+        color: #3a79ff;
+
+        &:hover {
+            background-color: darken(#d2e1ff, 5%);
+        }
+    }
+}
+
+// === / COMMON ===
+
+// === HEADER ===
+.section-header {
+    .section-inner {
+        padding-top: $padding-vertical-xs;
+        padding-bottom: $padding-vertical-xs;
+    }
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.nav-wrapper {
+    display: flex;
+
+}
+
+.logo {
+    background-color: #5e81fe;
+    width: $base * 6;
+    height: $base * 6;
+    border-radius: 100%;
+}
+
+.nav {
+    margin-left: $base * 18;
+}
+
+.nav-wrapper {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__item {
+        &+& {
+            margin-left: $base * 10;
+        }
+
+        &-link {
+            @include quicksand;
+
+            font-size: $fs-sm;
+            color: $color-primary;
+            text-decoration: none;
+            font-weight: $fw-medium;
+
+            &:hover {
+                color: $color-secondary;
+                transition: $transition;
+            }
+
+            &--active {
+                color: $color-secondary;
+                font-weight: $fw-bold;
+            }
+
+        }
+    }
+}
+
+.socials {
+    margin-left: auto;
+}
+
+.socials-wrapper {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+
+    &__item {
+        &+& {
+            margin-left: $base * 9;
+        }
+
+        &-link {
+            path {
+                fill: $color-primary;
+                transition: $transition;
+
+                &:hover {
+                    fill: $color-secondary;
+                    // transition: $transition;
+                }
+            }
+
+
+
+        }
+    }
+}
+
+.btn-wrapper {
+    margin-left: $base * 11;
+}
+
+// === / HEADER ===
+
+
+// === HERO-IMAGE ===
+.section-hero-image {
+    background-color: #f4f7ff;
+}
+
+// === / HERO-IMAGE ===
+
+// === CUSTOMERS ===
+.section-customers {
+    .section-inner {
+        padding-top: $padding-vertical-sm;
+        padding-bottom: $padding-vertical-sm;
+    }
+}
+
+// === / CUSTOMERS ===
+
+// === PLAN-AND-IMAGE ===
+.section-plan-and-manage {
+    background-color: #f5f8ff;
+}
+
+// === / PLAN-AND-IMAGE ===
+
+// === FEATURES ===
+.section-features {}
+
+// === / FEATURES ===
+
+// === STATS ===
+.section-stats {
+    background-color: #e9efff;
+
+    .section-inner {
+        padding-top: $padding-vertical-sm;
+        padding-bottom: $padding-vertical-sm;
+    }
+}
+
+// === / STATS ===
+
+// === BLOG ===
+.section-blog {
+    background-color: #f5f8ff;
+}
+
+// === / BLOG ===
+
+// === QUOTES ===
+.section-quotes {
+    background-color: #eaf0ff;
+}
+
+// === / QUOTES ===
+
+// === FAQ ===
+.section-faq {}
+
+// === / FAQ ===
+
+// === GET-STARTED ===
+.section-get-started {
+    background-color: #567aff;
+}
+
+// === / GET-STARTED ===
+
+// === NEWSLETTER ===
+.section-newsletter {
+    background-color: #fcfdff;
+}
+
+// === / NEWSLETTER ===
+
+// === FOOTER ===
+.section-footer {
+    border-bottom: 0;
+
+    .section-inner {
+        padding-top: $padding-vertical-sm;
+        padding-bottom: $padding-vertical-sm;
+    }
+}
+
+.copyright {
+    @include quicksand;
+
+    font-size: $fs-sm;
+    font-weight: $fw-medium;
+    color: #aeb8d0;
+    margin-left: $base * 24;
+    margin-top: $base * 7;
+
+}
+
+// === / FOOTER ===
