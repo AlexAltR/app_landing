@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap');
 
 // === MIXIN ===
 @mixin roboto {
@@ -14,6 +14,7 @@
 // === VARIABLES ===
 $base: 4px;
 
+$fw-light: 300;
 $fw-regular: 400;
 $fw-medium: 500;
 $fw-bold: 700;
@@ -31,6 +32,7 @@ $transition: .2s;
 
 $color-primary: #697ca6;
 $color-secondary: #6188ff;
+$color-h1-6: #3d4f9f;
 // === / VARIABLES ===
 
 
@@ -38,6 +40,8 @@ $color-secondary: #6188ff;
 // === COMMON ===
 body {
     @include roboto;
+
+    color: #8d96bd;
 }
 
 
@@ -77,6 +81,74 @@ body {
             background-color: darken(#d2e1ff, 5%);
         }
     }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include quicksand;
+
+    margin: 0;
+    padding: 0;
+    font-weight: $fw-regular;
+    color: $color-h1-6;
+}
+
+h1,
+h2 {
+    margin-bottom: $base * 7;
+    font-size: 48px;
+}
+
+h3 {
+    margin-bottom: $base * 7;
+    font-size: 36px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    @include roboto;
+
+    font-size: 10px;
+    margin-bottom: $base * 4;
+}
+
+.ta-c {
+    text-align: center;
+}
+
+.dots {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    &__item {
+        width: $base * 2;
+        height: $base * 2;
+        border-radius: 100%;
+        background-color: #d1d6e3;
+        transition: $transition;
+        cursor: pointer;
+
+        &--active {
+            background-color: #5283ff;
+        }
+
+        &+& {
+            margin-left: $base * 3;
+        }
+    }
+}
+
+.span-h2 {
+    font-weight: $fw-medium;
 }
 
 // === / COMMON ===
@@ -185,16 +257,88 @@ body {
 
 // === HERO-IMAGE ===
 .section-hero-image {
+    position: relative;
     background-color: #f4f7ff;
+
+    .dots {
+        position: absolute;
+        bottom: $base * 7;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
+
+.slider-hero-image {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    &__item {
+        height: $base * 140;
+        text-align: center;
+        background-position: 50% 70%;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &-content {
+            h2 {
+                font-weight: $fw-light;
+            }
+
+            .text {
+                line-height: 2;
+                width: 55%;
+                margin: 0 auto $base*5;
+                font-size: $fs-medium;
+            }
+        }
+
+    }
+}
+
+.icon-play {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 100%;
+    box-shadow: 0 10px 50px rgba($color: #c9d1e7, $alpha: 0.6);
+    display: inline-flex;
+    height: $base * 13;
+    justify-content: center;
+    width: $base * 13;
+
+    &::before {
+        display: block;
+        content: '';
+        margin-left: $base*4;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-width: $base*2 $base*3;
+        border-style: solid;
+        border-left-color: #5e81ff;
+    }
+}
+
 
 // === / HERO-IMAGE ===
 
 // === CUSTOMERS ===
 .section-customers {
     .section-inner {
-        padding-top: $padding-vertical-sm;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
         padding-bottom: $padding-vertical-sm;
+        padding-top: $padding-vertical-sm;
+
+        a {
+            opacity: 0.7;
+            transition: $transition;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -203,6 +347,23 @@ body {
 // === PLAN-AND-IMAGE ===
 .section-plan-and-manage {
     background-color: #f5f8ff;
+
+
+
+    &__content {
+        width: 50%;
+
+        .text {
+            line-height: 2;
+            margin-bottom: $base * 12;
+        }
+    }
+
+    &__img {
+        position: relative;
+        top: 0;
+    }
+
 }
 
 // === / PLAN-AND-IMAGE ===
@@ -217,8 +378,8 @@ body {
     background-color: #e9efff;
 
     .section-inner {
-        padding-top: $padding-vertical-sm;
         padding-bottom: $padding-vertical-sm;
+        padding-top: $padding-vertical-sm;
     }
 }
 
